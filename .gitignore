@@ -6,3 +6,5 @@ cov
 _build
 blib
 HTML-Tree-Query-*.tgz
+Build
+MYMETA.*

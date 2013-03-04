@@ -5,7 +5,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
     module_name         => 'HTML::Tree::Query',
-    license             => 'Artistic_2_0',
+    license             => 'perl',
     dist_author         => q{Dave Czmer <dczmer@gmail.com>},
     dist_version_from   => 'lib/HTML/Tree/Query.pm',
     release_status      => 'stable',
