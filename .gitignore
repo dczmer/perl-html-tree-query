@@ -5,6 +5,8 @@ cov
 *.bak
 _build
 blib
-HTML-Tree-Query-*.tgz
+HTML-Tree-Query-*.tar.gz
 Build
 MYMETA.*
+META.*
+Makefile.PL
