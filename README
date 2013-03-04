@@ -37,6 +37,13 @@ valid XML/XHTML.
 - [HTML::TreeBuilder](http://search.cpan.org/perldoc?HTML::TreeBuilder)
 - [CSS::Selector::Parser](http://search.cpan.org/perldoc?CSS::Selector::Parser)
 
+# METHODS
+
+- query\_dom
+
+    Given an HTML tree object and a selector string, find all matching
+    nodes in the tree.
+
 # SEE ALSO
 
 - [HTML::TreeBuilder](http://search.cpan.org/perldoc?HTML::TreeBuilder) - ues this to build a tree object to query.

@@ -5,7 +5,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
     module_name         => 'HTML::Tree::Query',
-    license             => 'perl',
+    license             => 'artistic_2',
     dist_author         => q{Dave Czmer <dczmer@gmail.com>},
     dist_version_from   => 'lib/HTML/Tree/Query.pm',
     release_status      => 'stable',
@@ -22,6 +22,7 @@ my $builder = Module::Build->new(
         'Test::MockObject::Extends' => 0,
         'Test::Class' => 0,
         'Test::MockObject' => 0,
+        'Test::Pod::Coverage' => 0,
     },
     requires => {
         'ExtUtils::CBuilder' => 0,
@@ -30,6 +31,7 @@ my $builder = Module::Build->new(
     },
     add_to_cleanup     => [ 'HTML-Tree-Query-*' ],
     create_makefile_pl => 'traditional',
+    recursive_test_files => 1,
 );
 
 $builder->create_build_script();

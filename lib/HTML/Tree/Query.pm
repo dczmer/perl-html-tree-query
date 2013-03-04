@@ -54,44 +54,9 @@ L<CSS::Selector::Parser>
 
 =back
 
-=head1 SEE ALSO
+=head1 METHODS
 
 =over
-
-=item *
-
-L<HTML::TreeBuilder> - ues this to build a tree object to query.
-
-=item *
-
-L<HTML::Tree> - this is what TreeBuilder produces and this module
-operates on; inherits from L<HTML::Element> so it has the same methods
-available.
-
-=item *
-
-L<HTML::Element> - the tree is made up of element objects. This is what
-your query results will be, an array-ref of L<HTML::Element> objects.
-
-=item *
-
-L<CSS::Selector::Parser> - I used this module to parse the selector
-strings into criteria that is used to traverse the tree. It also
-chains rules together with combinators, which control how this module
-matches elements from one rule to the next.
-
-=back
-
-=head1 AUTHOR
-
-    David Czmer <dczmer@gmail.com>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2013 by David Czmer <dczmer@gmail.com>.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as perl itself.
 
 =cut
 
@@ -108,6 +73,13 @@ my %combinators = (
     # not implemented
     #'~' => \&_match_general_sybling,
 );
+
+=item query_dom
+
+Given an HTML tree object and a selector string, find all matching
+nodes in the tree.
+
+=cut
 
 sub query_dom {
     my ($tree, $selector) = @_;
@@ -221,5 +193,48 @@ sub _match_general_sybling {
     my ($node, $criteria) = @_;
     die("Not implemented");
 }
+
+=back
+
+=head1 SEE ALSO
+
+=over
+
+=item *
+
+L<HTML::TreeBuilder> - ues this to build a tree object to query.
+
+=item *
+
+L<HTML::Tree> - this is what TreeBuilder produces and this module
+operates on; inherits from L<HTML::Element> so it has the same methods
+available.
+
+=item *
+
+L<HTML::Element> - the tree is made up of element objects. This is what
+your query results will be, an array-ref of L<HTML::Element> objects.
+
+=item *
+
+L<CSS::Selector::Parser> - I used this module to parse the selector
+strings into criteria that is used to traverse the tree. It also
+chains rules together with combinators, which control how this module
+matches elements from one rule to the next.
+
+=back
+
+=head1 AUTHOR
+
+    David Czmer <dczmer@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by David Czmer <dczmer@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as perl itself.
+
+=cut
 
 1;  
