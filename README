@@ -1,0 +1,62 @@
+# NAME
+
+HTML::Tree::Query - select elements from an [HTML::Tree](http://search.cpan.org/perldoc?HTML::Tree) object using
+jQuery-like selectors.
+
+# VERSION
+
+Version 0.001
+
+# SYNOPSIS
+
+    use HTML::Tree::query qw(query_dom);
+
+    $text_elements = query_dom($tree, "input[type=text]");
+    foreach my $html_element (@$text_elements) {
+        print $html_element->as_HTML();
+    }
+
+# DESCRIPTION
+
+This module allows you to use some jquery-like selectors to query an 
+[HTML::Tree](http://search.cpan.org/perldoc?HTML::Tree) object and get back an array-ref of [HTML::Element](http://search.cpan.org/perldoc?HTML::Element)
+objects that match the criteria.
+
+For unit testing and mechanize/browser tests, it is important to
+have an easy to use method of validating HTML documents.
+
+[Mojo::DOM](http://search.cpan.org/perldoc?Mojo::DOM) is really cool but it requires the entire Mojolicious
+framework as a dependency.
+
+You could also use some of the various modules that implement
+XPath-style querying but most of the legacy HTML I parse is not
+valid XML/XHTML.
+
+# DEPENDENCIES
+
+- [HTML::TreeBuilder](http://search.cpan.org/perldoc?HTML::TreeBuilder)
+- [CSS::Selector::Parser](http://search.cpan.org/perldoc?CSS::Selector::Parser)
+
+# SEE ALSO
+
+- [HTML::TreeBuilder](http://search.cpan.org/perldoc?HTML::TreeBuilder) - ues this to build a tree object to query.
+- [HTML::Tree](http://search.cpan.org/perldoc?HTML::Tree) - this is what TreeBuilder produces and this module
+operates on; inherits from [HTML::Element](http://search.cpan.org/perldoc?HTML::Element) so it has the same methods
+available.
+- [HTML::Element](http://search.cpan.org/perldoc?HTML::Element) - the tree is made up of element objects. This is what
+your query results will be, an array-ref of [HTML::Element](http://search.cpan.org/perldoc?HTML::Element) objects.
+- [CSS::Selector::Parser](http://search.cpan.org/perldoc?CSS::Selector::Parser) - I used this module to parse the selector
+strings into criteria that is used to traverse the tree. It also
+chains rules together with combinators, which control how this module
+matches elements from one rule to the next.
+
+# AUTHOR
+
+    David Czmer <dczmer@gmail.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by David Czmer <dczmer@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as perl itself.

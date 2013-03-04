@@ -1,0 +1,8 @@
+errors.err
+t/test_repo
+cover_db
+cov
+*.bak
+_build
+blib
+HTML-Tree-Query-*.tgz
