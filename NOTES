@@ -1,0 +1,19 @@
+TODO: implement pseudo-class selectors:
+
+:nth-child(N)
+:nth-last-child(N)
+:nth-of-type(N)
+:nth-last-of-type(N)
+:nth-child
+:last-child
+:first-of-type
+:last-of-type
+:only-child
+:only-of-type
+:root
+:empty
+:target
+:enabled
+:disabled
+:checked
+:not(S)
