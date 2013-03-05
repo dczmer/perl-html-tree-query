@@ -19,7 +19,8 @@ Version 0.001
 
     use HTML::Tree::query qw(query_dom);
 
-    $text_elements = query_dom($tree, "input[type=text]");
+    $text_elements = query_dom($tree, "tbody td>input[type=text]");
+
     foreach my $html_element (@$text_elements) {
         print $html_element->as_HTML();
     }
@@ -223,6 +224,24 @@ chains rules together with combinators, which control how this module
 matches elements from one rule to the next.
 
 =back
+
+=head1 BUGS / MISSING FEATURES
+
+Pseudo classes, like :before and :after, are not implemented yet.
+I don't see much use for :hover, :visited, etc in this context.
+
+The specification for operator precedence with complicated querys is
+not clearly defined.
+
+For example:
+
+    div>h1,h2
+
+Does it return all h1's or h2's that are under a div? Or does it
+return all h1's under a div, and all h2's in the tree?
+
+This implementation does the latter and some quick testing with jquery
+seems to indicate that this is the expected behavior.
 
 =head1 AUTHOR
 
