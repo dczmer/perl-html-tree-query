@@ -94,19 +94,8 @@ sub query_dom {
 
 sub _dedupe_nodes {
     my (@nodes) = @_;
-    my @deduped = ();
-    foreach my $n (@nodes) {
-        my $found = 0;
-        foreach my $d (@deduped) {
-            if ($d->idf() eq $n->idf()) {
-                $found = 1;
-            }
-        }
-        unless ($found) {
-            push @deduped => $n;
-        }
-    }
-    return @deduped;
+    my %seen;
+    return grep { !$seen{$_}++ } @_;
 }
 
 sub _match_nodes {
