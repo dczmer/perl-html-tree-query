@@ -11,6 +11,8 @@ our $VERSION = '0.001';
 HTML::Tree::Query - select elements from an L<HTML::Tree> object using
 jQuery-like selectors.
 
+L<https://github.com/dczmer/perl-html-tree-query>
+
 =head1 VERSION
 
 Version 0.001

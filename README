@@ -3,6 +3,8 @@
 HTML::Tree::Query - select elements from an [HTML::Tree](http://search.cpan.org/perldoc?HTML::Tree) object using
 jQuery-like selectors.
 
+[https://github.com/dczmer/perl-html-tree-query](https://github.com/dczmer/perl-html-tree-query)
+
 # VERSION
 
 Version 0.001
